@@ -9,7 +9,7 @@
 <body>
     <nav class="navbar">
         <div class="container">
-            <div class="nav-brand">ROS LED Control Project</div>
+            <div class="nav-brand">TUGAS PROYEK ROBOTIKA MEDIS</div>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#introduction">Pendahuluan</a></li>
@@ -26,8 +26,8 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">IMPLEMENTASI ROS PUBLISHER-SUBSCRIBER</h1>
-                <h2 class="hero-subtitle">UNTUK KONTROL LED BERBASIS PUSH BUTTON</h2>
-                <p class="hero-description">Proyek Robotika Medis</p>
+                <h2 class="hero-subtitle">SISTEM NURSE CALL BERBASIS IOT & ROS 2</h2>
+                <p class="hero-description">Andronikus (122430095), M. Aulia Bahtiar (122430062), Saif Khan Nazirun (122430060))</p>
                 <a href="#introduction" class="btn-primary">Mulai Presentasi</a>
             </div>
         </div>
@@ -41,23 +41,26 @@
                 <div class="card">
                     <div class="card-icon">🎯</div>
                     <h3>Tujuan Proyek</h3>
-                    <p>Mengimplementasikan sistem kontrol LED menggunakan arsitektur ROS Publisher-Subscriber dengan input dari push button</p>
+                    <p>Mengimplementasikan protokol komunikasi Micro-ROS untuk menghubungkan mikrokontroler dengan ekosistem ROS 2.</p>
+                    <p>Membangun sistem komunikasi dua arah (Publisher/Subscriber) antara perangkat keras dan perangkat lunak.</p>
+                    <p>Membuat logika otomatisasi sederhana menggunakan Python Node untuk merespons panggilan darurat pasien.</p>
+                    <p>Memenuhi standar dasar arsitektur robotika medis: Sensing (Merasakan), Thinking (Memproses), dan Acting (Bertindak).</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">🔧</div>
-                    <h3>Teknologi</h3>
-                    <p>Robot Operating System (ROS), Python/C++, Mikrokontroler, GPIO Interface</p>
+                    <h3>Alat dan Bahan</h3>
+                    <p>Robot Operating System (ROS), Python/C++, ESP 32, GPIO Interface, Arduino IDE</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">📚</div>
                     <h3>Manfaat</h3>
-                    <p>Memahami konsep komunikasi Publisher-Subscriber dalam sistem robotika dan aplikasi medis</p>
+                    <p>Memahami konsep komunikasi Publisher-Subscriber dalam sistem robotika dan aplikasi medis sederhana pada proyek nurse call.</p>
                 </div>
             </div>
             <div class="content-box">
                 <h3>Latar Belakang</h3>
-                <p>Robot Operating System (ROS) adalah framework yang banyak digunakan dalam pengembangan sistem robotika, termasuk robotika medis. Salah satu konsep fundamental dalam ROS adalah pola komunikasi Publisher-Subscriber yang memungkinkan pertukaran data antar node secara asinkron.</p>
-                <p>Proyek ini mendemonstrasikan implementasi dasar dari konsep tersebut melalui sistem kontrol LED yang dikendalikan oleh push button, yang dapat menjadi fondasi untuk aplikasi robotika medis yang lebih kompleks.</p>
+                <p>Dalam lingkungan rumah sakit modern (Smart Hospital), kecepatan respons tenaga medis terhadap panggilan pasien adalah faktor krusial yang menentukan keselamatan nyawa. Sistem pemanggilan perawat (Nurse Call System) konvensional seringkali masih menggunakan sistem analog atau kabel yang kaku, sulit dikembangkan, dan minim integrasi data.</p>
+                <p>Seiring berkembangnya teknologi Robotika Medis dan Internet of Things (IoT), diperlukan sebuah sistem yang tidak hanya sekadar membunyikan bel, tetapi juga mampu mengolah data secara digital. Oleh karena itu, proyek ini mengembangkan prototipe sistem pemanggilan cerdas yang terintegrasi dengan Robot Operating System 2 (ROS 2), standar global dalam pengembangan perangkat lunak robotika..</p>
             </div>
         </div>
     </section>
@@ -68,14 +71,9 @@
             <h2 class="section-title">Arsitektur Sistem</h2>
             <div class="architecture-diagram">
                 <div class="arch-box publisher">
-                    <h4>PUBLISHER NODE</h4>
-                    <p>Button Input</p>
+                    <h4>Input (Sensing)</h4>
+                    <p>Pasien menekan tombol pada ESP32. Data status tombol dibaca oleh sensor digital.</p>
                     <div class="node-detail">
-                        <ul>
-                            <li>Membaca status push button</li>
-                            <li>Mempublikasikan data ke topic</li>
-                            <li>Debouncing untuk stabilitas</li>
-                        </ul>
                     </div>
                 </div>
                 <div class="arch-arrow">
@@ -197,36 +195,31 @@ if __name__ == '__main__':
                     <div class="step">
                         <div class="step-number">1</div>
                         <div class="step-content">
-                            <h4>Setup ROS Environment</h4>
-                            <p>Install ROS dan buat workspace catkin</p>
+                            <h4>Persiapan Lingkungan Software (ROS 2 & WSL)</h4>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-number">2</div>
                         <div class="step-content">
-                            <h4>Buat Package</h4>
-                            <p>Buat ROS package dengan dependencies yang diperlukan</p>
+                            <h4>Konfigurasi Jaringan & Keamanan</h4>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
                         <div class="step-content">
-                            <h4>Implementasi Nodes</h4>
-                            <p>Tulis kode untuk publisher dan subscriber nodes</p>
+                            <h4>Perakitan Perangkat Keras (Hardware)</h4>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-number">4</div>
                         <div class="step-content">
-                            <h4>Konfigurasi Hardware</h4>
-                            <p>Hubungkan push button dan LED ke GPIO pins</p>
+                            <h4>Pemrograman Firmware (ESP32)</h4>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-number">5</div>
                         <div class="step-content">
-                            <h4>Testing & Debug</h4>
-                            <p>Jalankan nodes dan verifikasi komunikasi</p>
+                            <h4>Pemrograman Logic Node (Laptop)</h4>
                         </div>
                     </div>
                 </div>
