@@ -99,16 +99,24 @@ document.querySelectorAll('.code-block').forEach(codeBlock => {
             setTimeout(() => {
                 copyButton.textContent = 'Copy';
             }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy code:', err);
+            copyButton.textContent = 'Failed';
+            setTimeout(() => {
+                copyButton.textContent = 'Copy';
+            }, 2000);
         });
     });
 });
 
 // Add mobile menu toggle for responsive design
+const MOBILE_BREAKPOINT = 768; // px - matches CSS media query breakpoint
+
 const createMobileMenu = () => {
     const navbar = document.querySelector('.navbar .container');
     const navMenu = document.querySelector('.nav-menu');
     
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= MOBILE_BREAKPOINT) {
         if (!document.querySelector('.menu-toggle')) {
             const menuToggle = document.createElement('button');
             menuToggle.className = 'menu-toggle';
