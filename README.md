@@ -48,7 +48,7 @@ Sistem dapat dikembangkan ke jaringan IoT dan middleware robotik.
 
 ### Perangkat Lunak
 - Arduino IDE
-- Library LiquidCrystal_I2C
+- ROS2
 - GitHub Pages
 - HTML, CSS, JavaScript
 
