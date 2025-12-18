@@ -909,27 +909,30 @@ section > p > strong {
 }
 
 /* ===== ENHANCED NAV STYLES ===== */
-nav.sticky-nav a.active {
+nav.scrolled {
+    box-shadow: 0 5px 30px rgba(102, 126, 234, 0.4);
+}
+
+nav a.active {
     background: white;
     color: #667eea;
     box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-    font-weight: 700;
 }
 
-nav.sticky-nav a::after {
+nav a::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     left: 50%;
     width: 0;
-    height: 2px;
+    height: 3px;
     background: white;
     transition: all 0.3s ease;
     transform: translateX(-50%);
     opacity: 0;
 }
 
-nav.sticky-nav a:hover::after {
+nav a:hover::after {
     width: 80%;
     opacity: 1;
 }
@@ -1253,13 +1256,13 @@ nav.sticky-nav a:hover::after {
         font-size: 1rem;
     }
     
-    nav.sticky-nav {
-        gap: 8px;
-        padding: 12px 10px;
+    nav {
+        gap: 10px;
+        padding: 15px 10px;
     }
     
-    nav.sticky-nav a {
-        padding: 8px 12px;
-        font-size: 0.85rem;
+    nav a {
+        padding: 10px 15px;
+        font-size: 0.9rem;
     }
 }
