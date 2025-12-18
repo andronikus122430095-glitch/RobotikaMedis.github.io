@@ -1,76 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Smart Nurse Call System berbasis Micro-ROS</title>
+    <title>Smart Nurse Call System | Robotika Medis</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <div class="hero">
-            <h1>SMART NURSE CALL SYSTEM BERBASIS MICRO-ROS</h1>
-        </div>
-    </header>
 
-    <section class="introduction">
-        <h2>Introduction</h2>
-        <p>Background: The Smart Nurse Call System is a highly efficient communication tool designed to enhance the interaction between patients and healthcare providers.</p>
-        <p>Project Description: Utilizing Micro-ROS, this system aims to provide real-time updates and alerts to nursing staff.</p>
-        <p>Objectives: Improve response times, enhance patient monitoring, and streamline communication processes.</p>
-    </section>
+<header>
+    <h1>Smart Nurse Call System</h1>
+    <p>
+        Sistem pemanggilan perawat nirkabel berbasis Micro-ROS 
+        sebagai implementasi Robotika Medis pada Smart Hospital
+    </p>
+</header>
 
-    <section class="implementation">
-        <h2>Implementation Steps</h2>
-        <h3>TAHAP 1: Software Installation</h3>
-        <p>Install WSL, ROS 2 Jazzy, and Docker</p>
-        <pre><code>sudo apt update
-sudo apt install docker.io
-</code></pre>
+<nav>
+    <a href="#pendahuluan">Pendahuluan</a>
+    <a href="#deskripsi">Deskripsi</a>
+    <a href="#tujuan">Tujuan</a>
+    <a href="#tahapan">Tahapan</a>
+    <a href="#evaluasi">Evaluasi</a>
+</nav>
 
-        <h3>TAHAP 2: Network and Security Configuration</h3>
-        <p>Configure the network settings for safe communication.</p>
+<section id="pendahuluan">
+    <h2>Pendahuluan</h2>
+    <p>
+        Dalam ekosistem Smart Hospital, kecepatan respons tenaga medis menjadi
+        faktor krusial dalam keselamatan pasien. Sistem Nurse Call konvensional
+        yang masih berbasis kabel memiliki keterbatasan fleksibilitas dan integrasi data.
+    </p>
+    <p>
+        Perkembangan Robotika Medis dan IoT mendorong hadirnya sistem
+        pemanggilan perawat yang cerdas, nirkabel, dan terintegrasi dengan ROS 2.
+    </p>
+</section>
 
-        <h3>TAHAP 3: Hardware Assembly</h3>
-        <p>Refer to the wiring table below:</p>
-        <table>
-            <tr><th>Component</th><th>Connection</th></tr>
-            <tr><td>ESP32</td><td>GPIO 23 to LED</td></tr>
-        </table>
+<section id="deskripsi">
+    <h2>Deskripsi Proyek</h2>
+    <ul>
+        <li>Node terdistribusi antara ESP32 dan Laptop</li>
+        <li>Push Button sebagai input panggilan pasien</li>
+        <li>LED dan buzzer sebagai aktuator notifikasi</li>
+        <li>Komunikasi real-time menggunakan Micro-ROS</li>
+    </ul>
+</section>
 
-        <h3>TAHAP 4: ESP32 Firmware Programming</h3>
-        <p>Deploy the firmware to the ESP32 chip.</p>
+<section id="tujuan">
+    <h2>Tujuan Pengembangan</h2>
+    <ul>
+        <li>Mengimplementasikan komunikasi Micro-ROS</li>
+        <li>Membangun sistem kendali tertutup berbasis ROS 2</li>
+        <li>Menerapkan konsep Robotika Medis dan IoT</li>
+        <li>Memenuhi CPMK mata kuliah Robotika Medis</li>
+    </ul>
+</section>
 
-        <h3>TAHAP 5: Manual Communication Testing</h3>
-        <p>Test communication using command line interface (CLI).</p>
-        <pre><code>ros2 topic pub /nurse_call std_msgs/String "Hello Nurse!"
-</code></pre>
+<section id="tahapan">
+    <h2>Tahapan Pembuatan Sistem</h2>
+    <ol>
+        <li>Instalasi ROS 2 dan WSL</li>
+        <li>Konfigurasi jaringan dan keamanan</li>
+        <li>Perakitan hardware ESP32</li>
+        <li>Pemrograman firmware Micro-ROS</li>
+        <li>Pengujian manual dan otomatis</li>
+    </ol>
+</section>
 
-        <h3>TAHAP 6: Logic Node Implementation</h3>
-        <p>Implement the <code>nurse_bot.py</code> logic nodes:</p>
-        <pre><code>def nurse_call():
-    print('Nurse has been called!')
-</code></pre>
+<section id="evaluasi">
+    <h2>Evaluasi Sistem</h2>
+    <p>
+        Sistem berjalan stabil dengan latensi rendah.
+        Micro-ROS menunjukkan keandalan komunikasi,
+        sedangkan ROS 2 memberikan fleksibilitas tinggi
+        dalam pengembangan logika otomatisasi.
+    </p>
+</section>
 
-        <h3>TAHAP 7: Full System Testing</h3>
-        <p>Conduct thorough end-to-end system tests.</p>
-    </section>
+<footer>
+    <p>© 2025 | Robotika Medis – Smart Nurse Call System</p>
+</footer>
 
-    <section class="troubleshooting">
-        <h2>Troubleshooting</h2>
-        <table>
-            <tr><th>Issue</th><th>Solution</th></tr>
-            <tr><td>ESP32 not connecting</td><td>Check Wi-Fi settings</td></tr>
-            <tr><td>ROS 2 errors</td><td>Re-install ROS packages</td></tr>
-            <tr><td>Lag in communication</td><td>Optimize network settings</td></tr>
-            <tr><td>Sensor not responding</td><td>Check wiring</td></tr>
-            <tr><td>Unexpected software crashes</td><td>Update software libraries</td></tr>
-        </table>
-    </section>
-
-    <section class="evaluation conclusion">
-        <h2>Evaluation and Conclusion</h2>
-        <p>This project has successfully demonstrated how to implement a Smart Nurse Call System utilizing Micro-ROS, showcasing the efficiency and reliability of the technology.</p>
-    </section>
+<!-- JavaScript -->
+<script src="js/script.js"></script>
 </body>
 </html>
