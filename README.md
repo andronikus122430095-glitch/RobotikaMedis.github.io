@@ -299,9 +299,8 @@ Meskipun terdapat kendala-kendala di atas, sistem akhirnya berhasil berjalan sta
 - Fleksibilitas ROS 2: Penggunaan Node Python memudahkan pembuatan logika otomatisasi ("Otak Sistem") dibandingkan harus memprogram logika kompleks langsung di dalam mikrokontroler.
 
 ## 📷 Dokumentasi Proyek
-## 📷 Dokumentasi Hardware
-![Rangkaian Smart Nurse Call](WhatsApp Image 2025-12-07 at 18.34.56.jpeg)
+[🖼️ Klik untuk melihat dokumentasi](https://andronikus122430095-glitch.github.io/RobotikaMedis.github.io/WhatsApp%20Image%202025-12-07%20at%2018.34.56.jpeg)
 
 ## 🎥 Video Demonstrasi Sistem
-[▶️ Klik untuk melihat video demonstrasi](WhatsApp Video 2025-12-07 at 18.32.37.mp4)
+[▶️ Klik untuk melihat video demonstrasi](https://andronikus122430095-glitch.github.io/RobotikaMedis.github.io/WhatsApp%20Video%202025-12-07%20at%2018.32.37.mp4)
 
