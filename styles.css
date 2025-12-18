@@ -909,23 +909,14 @@ section > p > strong {
 }
 
 /* ===== ENHANCED NAV STYLES ===== */
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
 nav.scrolled {
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 30px rgba(102, 126, 234, 0.4);
 }
 
-nav a {
-    position: relative;
-    transition: all 0.3s ease;
+nav a.active {
+    background: white;
+    color: #667eea;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
 
 nav a::after {
@@ -935,13 +926,15 @@ nav a::after {
     left: 50%;
     width: 0;
     height: 3px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
+    background: white;
     transition: all 0.3s ease;
     transform: translateX(-50%);
+    opacity: 0;
 }
 
 nav a:hover::after {
-    width: 100%;
+    width: 80%;
+    opacity: 1;
 }
 
 /* ===== ENHANCED FEATURE CARDS ===== */
@@ -1261,5 +1254,15 @@ nav a:hover::after {
     .download-btn {
         padding: 15px 20px;
         font-size: 1rem;
+    }
+    
+    nav {
+        gap: 10px;
+        padding: 15px 10px;
+    }
+    
+    nav a {
+        padding: 10px 15px;
+        font-size: 0.9rem;
     }
 }

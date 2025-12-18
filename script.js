@@ -182,11 +182,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         navLinks.forEach(link => {
-            link.style.borderBottom = 'none';
-            link.style.color = '';
+            link.classList.remove('active');
             if (link.getAttribute('href').substring(1) === current) {
-                link.style.borderBottom = '3px solid #667eea';
-                link.style.color = '#667eea';
+                link.classList.add('active');
             }
         });
     });
