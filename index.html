@@ -3,124 +3,607 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Nurse Call System | Robotika Medis</title>
+    <title>🏥 Smart Nurse Call System | Micro-ROS & IoT Healthcare</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Smart Nurse Call System - Sistem panggilan perawat cerdas berbasis Micro-ROS dan IoT untuk Smart Hospital">
+    <meta name="keywords" content="ROS2, Micro-ROS, ESP32, IoT, Healthcare, Robotika Medis, Nurse Call System">
+    <meta name="author" content="Robotika Medis Team">
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏥</text></svg>">
 </head>
 <body>
 
+<!-- Hero Section with Cover -->
+<div class="hero-section">
+    <img src="./cover.svg" alt="Smart Nurse Call System Banner" class="hero-banner">
+    <div class="hero-content">
+        <h1>🏥 Smart Nurse Call System</h1>
+        <p class="tagline">Revolutionizing Healthcare Communication with Micro-ROS & IoT</p>
+        
+        <div class="tech-badges">
+            <span class="badge">ESP32</span>
+            <span class="badge">ROS 2 Jazzy</span>
+            <span class="badge">Micro-ROS</span>
+            <span class="badge">IoT</span>
+        </div>
+        
+        <div class="team-info">
+            <h3>👥 Tim Pengembang</h3>
+            <div class="team-members">
+                <div class="member">
+                    <strong>🧑‍💻 Andronikus Parasian Siagian</strong>
+                    <span>122430095</span>
+                </div>
+                <div class="member">
+                    <strong>🧑‍💻 M. Aulia Bahtiar</strong>
+                    <span>122430062</span>
+                </div>
+                <div class="member">
+                    <strong>🧑‍💻 Saif Khan Nazirun</strong>
+                    <span>122430060</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <header>
-    <h1>Smart Nurse Call System</h1>
-    <p>
-        Sistem pemanggilan perawat nirkabel berbasis Micro-ROS
-        sebagai implementasi Robotika Medis pada Smart Hospital
-    </p>
-    <p>
-        Andronikus P. Siagian (122430095)
-        M. Aulia Bahtiar (122430062)
-        Saif Khan Nazirun (122430060)
-    </p>
-</header>
 
 <nav>
     <a href="#pendahuluan">Pendahuluan</a>
-    <a href="#deskripsi">Deskripsi</a>
-    <a href="#tujuan">Tujuan dan Manfaat</a>
-    <a href="#arsitektur">Arsitektur Sistem</a>
-    <a href="#hardware">Perangkat Keras</a>
-    <a href="#software">Perangkat Lunak</a>
-    <a href="#kesimpulan">Kesimpulan</a>
+    <a href="#fitur">Fitur</a>
+    <a href="#arsitektur">Arsitektur</a>
+    <a href="#komponen">Komponen</a>
+    <a href="#tahap1">Instalasi</a>
+    <a href="#tahap2">Konfigurasi</a>
+    <a href="#tahap3">Hardware</a>
+    <a href="#tahap4">Firmware</a>
+    <a href="#tahap5">Testing</a>
+    <a href="#tahap6">Logic Node</a>
+    <a href="#tahap7">Running System</a>
+    <a href="#troubleshooting">Troubleshooting</a>
     <a href="#dokumentasi">Dokumentasi</a>
 </nav>
 
-<section id="Pendahuluan">
-  <h2>Pendahuluan</h2>
+<section id="pendahuluan">
+  <h2>💡 Tentang Proyek</h2>
   <p>
-    Dalam lingkungan rumah sakit, komunikasi antara pasien dan tenaga medis
-    merupakan aspek krusial. Sistem pemanggil perawat konvensional memiliki
-    keterbatasan, seperti minimnya informasi kondisi pasien dan kurangnya
-    integrasi dengan sistem digital.
+    <strong>Smart Nurse Call System</strong> adalah sistem panggilan perawat cerdas berbasis <strong>Micro-ROS</strong> 
+    yang mengintegrasikan mikrokontroler <strong>ESP32</strong> dengan <strong>ROS 2 (Robot Operating System 2)</strong> 
+    untuk menciptakan komunikasi real-time antara pasien dan tenaga medis.
   </p>
   <p>
-    Oleh karena itu, proyek <strong>Smart Nurse Call System</strong> dikembangkan
-    sebagai solusi berbasis robotika medis dan IoT untuk meningkatkan respons
-    tenaga medis, efisiensi pelayanan, serta keselamatan pasien.
+    Sistem ini memanfaatkan teknologi <strong>IoT (Internet of Things)</strong> dan arsitektur 
+    <strong>Publisher-Subscriber</strong> untuk menghadirkan respons yang cepat, akurat, dan efisien 
+    dalam lingkungan rumah sakit modern.
   </p>
-</section>
 
-<section id="deskripsi">
-    <h2>Deskripsi Proyek</h2>
-    <ul>
-        <li>ESP32 sebagai node klien</li>
-        <li>ROS 2 sebagai pusat kendali</li>
-        <li>Push button sebagai input pasien</li>
-        <li>LED dan buzzer sebagai notifikasi</li>
-    </ul>
-</section>
-
-<section id="tujuan">
-  <h2>Tujuan dan Manfaat</h2>
+  <h3>🎯 Mengapa Proyek Ini Penting?</h3>
+  <p>
+    Dalam ekosistem <strong>Smart Hospital</strong>, kecepatan respons tenaga medis adalah faktor vital 
+    dalam keselamatan pasien. Sistem konvensional berbasis analog memiliki keterbatasan dalam skalabilitas, 
+    integrasi data, dan fleksibilitas.
+  </p>
   <ul>
-    <li>Mengembangkan sistem pemanggil perawat berbasis IoT dan embedded system</li>
-    <li>Mengintegrasikan mikrokontroler dengan antarmuka pengguna</li>
-    <li>Meningkatkan kecepatan dan akurasi respons tenaga medis</li>
-    <li>Menerapkan konsep robotika medis dalam sistem pelayanan kesehatan</li>
-    <li>Menjadi media pembelajaran implementatif pada mata kuliah Robotika Medis</li>
+    <li>✅ <strong>Wireless & Scalable</strong> - Komunikasi nirkabel via WiFi tanpa batasan kabel</li>
+    <li>✅ <strong>Real-time Communication</strong> - Latensi rendah menggunakan protokol XRCE-DDS</li>
+    <li>✅ <strong>ROS 2 Integration</strong> - Mudah dikembangkan menjadi robot asisten medis otonom</li>
+    <li>✅ <strong>Open Architecture</strong> - Platform terbuka untuk riset dan pengembangan lanjutan</li>
   </ul>
+</section>
+
+<section id="fitur">
+  <h2>✨ Fitur Unggulan</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h3>🚨 Emergency Alert System</h3>
+      <p>Tombol darurat yang memicu alarm visual (LED merah) dan audio (buzzer) secara simultan untuk respons cepat</p>
+    </div>
+    <div class="feature-card">
+      <h3>🔄 Real-time Monitoring</h3>
+      <p>Data status pasien dikirim real-time ke Nurse Station menggunakan protokol XRCE-DDS</p>
+    </div>
+    <div class="feature-card">
+      <h3>📡 Wireless Communication</h3>
+      <p>Koneksi WiFi antara ESP32 dan server dengan dukungan jaringan lokal dan cloud</p>
+    </div>
+    <div class="feature-card">
+      <h3>🤖 ROS 2 Integration</h3>
+      <p>Arsitektur berbasis ROS 2 untuk ekspansi ke sistem robotik medis otonom</p>
+    </div>
+  </div>
 </section>
 
 <section id="arsitektur">
-  <h2>Arsitektur Sistem</h2>
-  <p>
-    Sistem Smart Nurse Call terdiri dari beberapa komponen utama, yaitu
-    mikrokontroler ESP32, tombol input pasien, buzzer dan LED indikator,
-    serta tampilan LCD. Data dari pasien diproses oleh ESP32 dan dikirimkan
-    melalui jaringan IoT untuk ditampilkan pada sistem monitoring.
-  </p>
-  <p>
-    Middleware robotik seperti ROS 2 dan micro-ROS memungkinkan sistem ini
-    dikembangkan lebih lanjut menjadi bagian dari ekosistem robotika medis
-    yang terdistribusi.
-  </p>
+  <h2>🧠 Arsitektur Sistem</h2>
+  
+  <h3>📋 Alur Kerja Sistem</h3>
+  <ol>
+    <li><strong>Input Pasien</strong> → Pasien menekan tombol darurat fisik</li>
+    <li><strong>Processing ESP32</strong> → ESP32 membaca status GPIO dan mem-publish data ke topic <code>/button_state</code></li>
+    <li><strong>Network Transport</strong> → Data dikirim via WiFi menggunakan protokol XRCE-DDS</li>
+    <li><strong>ROS 2 Agent</strong> → Micro-ROS Agent menerima dan meneruskan data ke ROS 2 ecosystem</li>
+    <li><strong>Logic Processing</strong> → Python node (<code>nurse_bot.py</code>) memproses logika dan mem-publish ke <code>/led_command</code></li>
+    <li><strong>Actuator Response</strong> → ESP32 subscribe ke <code>/led_command</code> dan mengaktifkan LED + Buzzer</li>
+  </ol>
 </section>
 
-<section id="hardware">
-  <h2>Perangkat Keras</h2>
+<section id="komponen">
+  <h2>🛠️ Komponen Sistem</h2>
+  
+  <h3>🔧 Perangkat Keras (Hardware)</h3>
+  <table>
+    <tr>
+      <th>Komponen</th>
+      <th>Spesifikasi</th>
+      <th>Jumlah</th>
+      <th>Fungsi</th>
+    </tr>
+    <tr>
+      <td><strong>ESP32 DOIT DEVKIT V1</strong></td>
+      <td>Dual-core 240MHz, WiFi/BT</td>
+      <td>1</td>
+      <td>Mikrokontroler utama & komunikasi nirkabel</td>
+    </tr>
+    <tr>
+      <td><strong>Push Button</strong></td>
+      <td>Tactile Switch 6x6mm</td>
+      <td>1</td>
+      <td>Input darurat dari pasien</td>
+    </tr>
+    <tr>
+      <td><strong>LED Merah</strong></td>
+      <td>5mm, 20mA</td>
+      <td>1</td>
+      <td>Indikator status bahaya/panggilan aktif</td>
+    </tr>
+    <tr>
+      <td><strong>LED Hijau</strong></td>
+      <td>5mm, 20mA</td>
+      <td>1</td>
+      <td>Indikator status aman/standby</td>
+    </tr>
+    <tr>
+      <td><strong>Resistor 330Ω</strong></td>
+      <td>1/4W Carbon Film</td>
+      <td>2</td>
+      <td>Pembatas arus untuk LED</td>
+    </tr>
+    <tr>
+      <td><strong>Active Buzzer</strong></td>
+      <td>5V DC</td>
+      <td>1</td>
+      <td>Alarm audio untuk notifikasi</td>
+    </tr>
+    <tr>
+      <td><strong>Breadboard</strong></td>
+      <td>830 lubang</td>
+      <td>1</td>
+      <td>Platform perakitan sementara</td>
+    </tr>
+  </table>
+
+  <h3>💻 Perangkat Lunak (Software Stack)</h3>
+  <table>
+    <tr>
+      <th>Kategori</th>
+      <th>Tools</th>
+      <th>Versi</th>
+      <th>Keterangan</th>
+    </tr>
+    <tr>
+      <td><strong>OS Host</strong></td>
+      <td>Windows 11 + WSL 2</td>
+      <td>-</td>
+      <td>Sistem operasi utama</td>
+    </tr>
+    <tr>
+      <td><strong>OS Guest</strong></td>
+      <td>Ubuntu</td>
+      <td>24.04 LTS</td>
+      <td>Subsistem Linux untuk ROS 2</td>
+    </tr>
+    <tr>
+      <td><strong>Middleware</strong></td>
+      <td>ROS 2 Jazzy Jalisco</td>
+      <td>Latest</td>
+      <td>Robot Operating System</td>
+    </tr>
+    <tr>
+      <td><strong>Micro-ROS</strong></td>
+      <td>micro-ros-agent</td>
+      <td>Jazzy</td>
+      <td>Bridge ESP32 ↔ ROS 2</td>
+    </tr>
+    <tr>
+      <td><strong>Containerization</strong></td>
+      <td>Docker Desktop</td>
+      <td>Latest</td>
+      <td>Menjalankan Micro-ROS Agent</td>
+    </tr>
+    <tr>
+      <td><strong>IDE</strong></td>
+      <td>Arduino IDE</td>
+      <td>2.0+</td>
+      <td>Pemrograman ESP32</td>
+    </tr>
+    <tr>
+      <td><strong>Language</strong></td>
+      <td>Python</td>
+      <td>3.10+</td>
+      <td>Logic node & automation</td>
+    </tr>
+  </table>
+</section>
+
+
+<section id="tahap1">
+  <h2>📦 TAHAP 1: Environment Setup</h2>
+  <p>Sistem operasi utama yang digunakan adalah Windows 11 dengan subsistem Linux (WSL 2) yang menjalankan Ubuntu 24.04.</p>
+
+  <h3>1.1. Instalasi WSL 2 (Ubuntu 24.04)</h3>
   <ul>
-    <li>ESP32 sebagai pengendali utama sistem</li>
-    <li>Push button sebagai input panggilan pasien</li>
-    <li>Buzzer dan LED sebagai indikator visual dan audio</li>
-    <li>Breadboard dan kabel jumper untuk perakitan rangkaian</li>
+    <li>Buka PowerShell sebagai Administrator</li>
+    <li>Jalankan perintah instalasi:</li>
+  </ul>
+  <pre><code>wsl --install -d Ubuntu-24.04</code></pre>
+  <ul>
+    <li>Restart komputer jika diminta</li>
+    <li>Buka aplikasi "Ubuntu" dari Start Menu, lalu buat username dan password UNIX baru</li>
+  </ul>
+
+  <h3>1.2. Instalasi ROS 2 Jazzy Jalisco</h3>
+  <p>Masuk ke terminal Ubuntu, lalu jalankan perintah berikut baris per baris:</p>
+  
+  <h4>Set Locale:</h4>
+  <pre><code>locale # Pastikan UTF-8
+sudo apt update && sudo apt install locales 
+sudo locale-gen en_US.UTF-8 
+sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 
+export LANG=en_US.UTF-8</code></pre>
+
+  <h4>Tambahkan Repository ROS 2:</h4>
+  <pre><code>sudo apt install software-properties-common 
+sudo add-apt-repository universe 
+sudo apt update && sudo apt install curl -y 
+sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg 
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null</code></pre>
+
+  <h4>Install Paket ROS 2 (Desktop):</h4>
+  <pre><code>sudo apt update 
+sudo apt upgrade 
+sudo apt install ros-jazzy-desktop</code></pre>
+
+  <h4>Setup Environment:</h4>
+  <p>Agar perintah ROS dikenali setiap terminal dibuka:</p>
+  <pre><code>echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc 
+source ~/.bashrc</code></pre>
+
+  <h3>1.3. Instalasi Docker & Micro-ROS Agent</h3>
+  <p>Micro-ROS Agent dijalankan menggunakan Docker agar lebih stabil.</p>
+  <ul>
+    <li>Install Docker di Windows: Unduh dan install Docker Desktop for Windows</li>
+    <li>Pull Image Micro-ROS: Buka terminal Ubuntu, tarik image versi Jazzy:</li>
+  </ul>
+  <pre><code>sudo docker pull microros/micro-ros-agent:jazzy</code></pre>
+</section>
+
+<section id="tahap2">
+  <h2>🌐 TAHAP 2: Konfigurasi Jaringan & Keamanan</h2>
+  <p><strong>⚠️ PENTING:</strong> Tahap ini krusial agar ESP32 bisa berkomunikasi dengan Laptop melalui WiFi!</p>
+
+  <h3>2.1. Mengaktifkan WSL Mirrored Mode</h3>
+  <p>Agar IP Ubuntu sama dengan IP Windows (sehingga terbaca ESP32).</p>
+  <ul>
+    <li>Di Windows, buka File Explorer</li>
+    <li>Ketik <code>%UserProfile%</code> di address bar</li>
+    <li>Buat file baru bernama <code>.wslconfig</code> (pastikan tidak ada ekstensi .txt)</li>
+    <li>Isi file dengan konfigurasi berikut:</li>
+  </ul>
+  <pre><code>[wsl2] 
+networkingMode=mirrored 
+dnsTunneling=true 
+firewall=true 
+autoProxy=true</code></pre>
+  <ul>
+    <li>Restart WSL via PowerShell: <code>wsl --shutdown</code></li>
+  </ul>
+
+  <h3>2.2. Membuka Firewall Windows</h3>
+  <p>Membuka Port 8888 (UDP) agar data ESP32 tidak diblokir.</p>
+  <ul>
+    <li>Buka PowerShell (Run as Administrator)</li>
+    <li>Jalankan perintah:</li>
+  </ul>
+  <pre><code>New-NetFirewallRule -DisplayName "MicroROS Agent" -Direction Inbound -LocalPort 8888 -Protocol UDP -Action Allow</code></pre>
+</section>
+
+<section id="tahap3">
+  <h2>⚡ TAHAP 3: Perakitan Hardware</h2>
+  
+  <h3>3.1. Alat dan Bahan</h3>
+  <p><strong>A. Perangkat Keras:</strong></p>
+  <ul>
+    <li><strong>ESP32 DOIT DEVKIT V1:</strong> Mikrokontroler utama yang berfungsi sebagai pemroses data dan modul komunikasi WiFi</li>
+    <li><strong>Push Button (Tactile Switch):</strong> Sensor input manual untuk memicu sinyal darurat</li>
+    <li><strong>LED Merah (5mm):</strong> Indikator visual untuk status bahaya/panggilan aktif</li>
+    <li><strong>LED Hijau (5mm):</strong> Indikator visual untuk status aman/standby</li>
+    <li><strong>Resistor 330 Ohm (2 buah):</strong> Komponen penghambat arus listrik yang WAJIB dipasang pada kaki LED agar LED tidak terbakar</li>
+    <li><strong>Active Buzzer (5V):</strong> Aktuator suara untuk memberikan notifikasi alarm</li>
+    <li><strong>Breadboard & Kabel Jumper:</strong> Media perakitan rangkaian non-permanen</li>
+    <li><strong>Kabel Micro USB:</strong> Untuk catu daya dan unggah program</li>
+  </ul>
+
+  <p><strong>B. Perangkat Lunak:</strong></p>
+  <ul>
+    <li>Sistem Operasi: Windows 11 (Host) & Ubuntu 24.04 (WSL)</li>
+    <li>Robot Operating System: ROS 2 Jazzy Jalisco</li>
+    <li>Middleware: Micro-ROS Agent (via Docker)</li>
+    <li>IDE: Arduino IDE (v2.x) & VS Code (Optional)</li>
+  </ul>
+
+  <h3>3.2. Skema Koneksi Pin</h3>
+  <p><strong>⚠️ WAJIB:</strong> Pasang resistor 330Ω <strong>secara seri</strong> dengan LED untuk mencegah kerusakan!</p>
+  
+  <table>
+    <tr>
+      <th>Komponen</th>
+      <th>Kaki Komponen</th>
+      <th>Pin ESP32</th>
+      <th>Keterangan</th>
+    </tr>
+    <tr>
+      <td rowspan="2"><strong>Push Button</strong></td>
+      <td>Kaki 1</td>
+      <td>GPIO 16 (RX2)</td>
+      <td>Mode INPUT_PULLUP</td>
+    </tr>
+    <tr>
+      <td>Kaki 2</td>
+      <td>GND</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td rowspan="2"><strong>LED Merah</strong></td>
+      <td>Kaki Positif (Anoda)</td>
+      <td>GPIO 23</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Kaki Negatif (Katoda)</td>
+      <td>GND</td>
+      <td>Lewat Resistor 330Ω (Seri)</td>
+    </tr>
+    <tr>
+      <td rowspan="2"><strong>LED Hijau</strong></td>
+      <td>Kaki Positif (Anoda)</td>
+      <td>GPIO 22</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Kaki Negatif (Katoda)</td>
+      <td>GND</td>
+      <td>Lewat Resistor 330Ω (Seri)</td>
+    </tr>
+    <tr>
+      <td rowspan="2"><strong>Buzzer</strong></td>
+      <td>Kaki Positif (+)</td>
+      <td>GPIO 25</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Kaki Negatif (-)</td>
+      <td>GND</td>
+      <td>Langsung ke Ground</td>
+    </tr>
+  </table>
+</section>
+
+<section id="tahap4">
+  <h2>💾 TAHAP 4: Pemrograman Firmware ESP32</h2>
+  
+  <h3>4.1. Setup Arduino IDE</h3>
+  <ul>
+    <li>Install Arduino IDE 2.0+</li>
+    <li><strong>Install Board ESP32:</strong>
+      <ul>
+        <li>File → Preferences → Additional Board Manager URLs: <code>https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json</code></li>
+        <li>Tools → Board → Board Manager → Cari "esp32" by Espressif Systems → Install</li>
+      </ul>
+    </li>
+    <li><strong>Install Library Micro-ROS:</strong>
+      <ul>
+        <li>Download library .zip dari GitHub micro_ros_arduino</li>
+        <li>Sketch → Include Library → Add .ZIP Library</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>4.2. Upload Kode Program</h3>
+  <ul>
+    <li>Salin kode lengkap (robotika_medis.ino) ke Arduino IDE</li>
+    <li><strong>PENTING:</strong> Edit bagian konfigurasi jaringan sesuai kondisi saat ini:</li>
+  </ul>
+  <pre><code>char ssid[] = "NamaWiFiAnda"; 
+char password[] = "PasswordWiFiAnda"; 
+char agent_ip[] = "192.168.x.x"; // Cek pakai 'ip a' di Ubuntu</code></pre>
+  <ul>
+    <li>Hubungkan ESP32 via USB</li>
+    <li>Pilih Board: DOIT ESP32 DEVKIT V1</li>
+    <li>Klik Upload</li>
   </ul>
 </section>
 
-<section id="software">
-  <h2>Perangkat Lunak dan Teknologi</h2>
+<section id="tahap5">
+  <h2>🧪 TAHAP 5: Pengujian Komunikasi Manual (CLI)</h2>
+  <p>Sebelum membuat program otomatis, pengujian manual dilakukan menggunakan Command Line Interface (CLI) ROS 2 untuk memastikan jalur data Input dan Output sudah terhubung dengan benar tanpa bug.</p>
+
+  <h3>5.1. Persiapan Terminal</h3>
+  <p>Buka terminal baru di Ubuntu (pastikan Agent Micro-ROS sudah berjalan di terminal lain). Masuk ke lingkungan ROS 2:</p>
+  <pre><code>sudo docker run -it --rm --net=host ros:jazzy</code></pre>
+
+  <h3>5.2. Pengujian Input (Monitoring Tombol)</h3>
+  <p>Langkah ini bertujuan memverifikasi apakah data dari ESP32 masuk ke Laptop.</p>
   <ul>
-    <li>Arduino IDE untuk pemrograman ESP32</li>
-    <li>JavaScript, HTML, dan CSS untuk antarmuka web</li>
-    <li>GitHub Pages sebagai media publikasi website</li>
-    <li>Konsep IoT untuk komunikasi data</li>
-    <li>ROS 2 dan micro-ROS sebagai pengembangan lanjutan</li>
+    <li>Jalankan perintah echo (mendengar):</li>
+  </ul>
+  <pre><code>ros2 topic echo /button_state --no-daemon</code></pre>
+  <ul>
+    <li><strong>Aksi:</strong> Tekan dan tahan tombol fisik di ESP32</li>
+    <li><strong>Hasil:</strong> Terminal menampilkan data: <code>true</code>. Saat dilepas, menampilkan data: <code>false</code></li>
+  </ul>
+
+  <h3>5.3. Pengujian Output (Kendali Lampu)</h3>
+  <p>Langkah ini bertujuan memverifikasi apakah Laptop bisa memerintah ESP32.</p>
+  <ul>
+    <li><strong>Nyalakan Alarm (Simulasi Bahaya):</strong></li>
+  </ul>
+  <pre><code>ros2 topic pub --once /led_command std_msgs/msg/Bool "{data: true}"</code></pre>
+  <p><strong>Hasil:</strong> LED Merah menyala dan Buzzer berbunyi.</p>
+  
+  <ul>
+    <li><strong>Matikan Alarm (Simulasi Aman):</strong></li>
+  </ul>
+  <pre><code>ros2 topic pub --once /led_command std_msgs/msg/Bool "{data: false}"</code></pre>
+  <p><strong>Hasil:</strong> LED Merah mati dan LED Hijau menyala.</p>
+</section>
+
+<section id="tahap6">
+  <h2>🧠 TAHAP 6: Implementasi Logic Node (Otomatisasi Sistem)</h2>
+  <p>Setelah pengujian manual berhasil, tahap terakhir adalah membuat "Otak" (Node) menggunakan Python agar sistem dapat merespons secara otomatis tanpa perlu mengetik perintah manual.</p>
+
+  <ul>
+    <li>Buka terminal Ubuntu dan buat file script Python:</li>
+  </ul>
+  <pre><code>nano nurse_bot.py</code></pre>
+
+  <ul>
+    <li>Masukkan kode program berikut:</li>
+  </ul>
+  <pre><code>import rclpy 
+from rclpy.node import Node 
+from std_msgs.msg import Bool 
+
+class NurseBot(Node): 
+    def __init__(self): 
+        super().__init__('nurse_bot') 
+        # Publisher: Mengirim perintah ke Lampu/Buzzer 
+        self.publisher_ = self.create_publisher(Bool, '/led_command', 10) 
+        # Subscriber: Menerima data dari Tombol 
+        self.subscription = self.create_subscription(Bool, '/button_state', self.callback, 10) 
+        self.get_logger().info("SISTEM NURSE CALL AKTIF... Menunggu Panggilan.") 
+
+    def callback(self, msg): 
+        # Logika Sederhana: Input = Output 
+        # Jika Tombol True (Ditekan) -> Kirim Perintah True (Nyala) 
+        cmd = Bool() 
+        cmd.data = msg.data 
+        self.publisher_.publish(cmd) 
+
+        # Tampilkan Log 
+        if msg.data: 
+            self.get_logger().warn("🚨 DARURAT! Pasien Memanggil Bantuan!") 
+        else: 
+            self.get_logger().info("✅ AMAN. Tombol Dilepas.") 
+
+def main(args=None): 
+    rclpy.init(args=args) 
+    node = NurseBot() 
+    rclpy.spin(node) # Loop agar program tidak berhenti 
+    rclpy.shutdown() 
+
+if __name__ == '__main__': 
+    main()</code></pre>
+
+  <ul>
+    <li>Simpan file (Ctrl+X, Y, Enter)</li>
+    <li>Jalankan sistem otomatisasi:</li>
+  </ul>
+  <pre><code>python3 nurse_bot.py</code></pre>
+  <p><strong>Hasil:</strong> Sekarang saat tombol ditekan, alarm akan menyala secara otomatis.</p>
+</section>
+
+<section id="tahap7">
+  <h2>▶️ TAHAP 7: Running the System</h2>
+  <p>Berikut adalah urutan menyalakan sistem agar berhasil:</p>
+
+  <h3>1. Jalankan Agent (Di Terminal 1):</h3>
+  <pre><code>sudo docker run -it --rm --net=host microros/micro-ros-agent:jazzy udp4 --port 8888 -v6</code></pre>
+
+  <h3>2. Nyalakan ESP32:</h3>
+  <p>Tekan tombol RESET (EN) di ESP32. Pastikan di Terminal 1 muncul: <code>Session established</code></p>
+
+  <h3>3. Jalankan Otak/Bot (Di Terminal 2):</h3>
+  <pre><code>python3 nurse_bot.py</code></pre>
+
+  <h3>4. Demonstrasi:</h3>
+  <ul>
+    <li><strong>Tekan Tombol Fisik</strong> → Lampu Merah Nyala & Terminal Laptop muncul peringatan "🚨 DARURAT!"</li>
+    <li><strong>Lepas Tombol</strong> → Lampu Hijau Nyala & Status kembali aman</li>
   </ul>
 </section>
 
-<section id="kesimpulan">
-  <h2>Kesimpulan</h2>
-  <p>
-    Proyek Smart Nurse Call System menunjukkan bahwa penerapan robotika medis
-    berbasis IoT mampu meningkatkan efisiensi dan kualitas pelayanan kesehatan.
-    Sistem ini dapat dikembangkan lebih lanjut dengan integrasi sensor biometrik,
-    kecerdasan buatan, dan sistem rumah sakit terpusat.
-  </p>
-</section>
+<section id="troubleshooting">
+  <h2>🚧 Troubleshooting & Problem Solving</h2>
+  <p>Selama pengembangan sistem, tim menghadapi berbagai kendala teknis terkait kompilasi firmware, konfigurasi jaringan, dan integrasi Micro-ROS dengan ROS 2 Agent. Berikut adalah dokumentasi lengkap beserta solusinya:</p>
 
+  <table>
+    <tr>
+      <th>No</th>
+      <th>Jenis Kendala</th>
+      <th>Deskripsi & Penyebab</th>
+      <th>Solusi</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td><strong>Error Kompilasi Arduino</strong></td>
+      <td>Pesan error: <code>invalid conversion from 'const char*' to 'char*'</code>. Ketidakcocokan tipe data pada library micro_ros_arduino</td>
+      <td>Mengubah deklarasi variabel SSID dan password menjadi array karakter yang dapat dimodifikasi. Contoh: <code>char ssid[] = "nama_wifi";</code></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong>Koneksi Gagal (Session)</strong></td>
+      <td>ESP32 tidak dapat terhubung ke Micro-ROS Agent, tidak muncul log <code>Session Established</code>. Disebabkan WSL 2 dengan IP NAT yang tidak dapat diakses ESP32</td>
+      <td>Mengubah mode jaringan WSL menjadi <strong>Mirrored Mode</strong> dengan membuat file <code>.wslconfig</code></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong>Firewall Blocking</strong></td>
+      <td>Windows Firewall memblokir koneksi masuk (Inbound) pada port UDP 8888</td>
+      <td>Membuat aturan baru pada Windows Firewall menggunakan PowerShell untuk mengizinkan koneksi UDP pada port 8888</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong>ROS 2 Daemon Timeout</strong></td>
+      <td>Error: <code>TimeoutError: [Errno 110] Connection timed out</code> saat menjalankan <code>ros2 topic echo</code></td>
+      <td>Menjalankan perintah ROS 2 CLI dengan argumen <code>--no-daemon</code> atau restart container Docker</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><strong>Missing Executable</strong></td>
+      <td>Error: <code>ros2: command not found</code> di container Micro-ROS Agent. Image bersifat minimalis</td>
+      <td>Menjalankan container terpisah menggunakan image <code>ros:jazzy</code> dengan <code>--net=host</code></td>
+    </tr>
+  </table>
+
+  <h3>📊 Evaluasi Sistem</h3>
+  <ul>
+    <li>✅ <strong>Stabilitas:</strong> Sistem berjalan stabil setelah troubleshooting lengkap</li>
+    <li>✅ <strong>Latensi:</strong> < 100ms untuk komunikasi ESP32 ↔ ROS 2</li>
+    <li>✅ <strong>Reliability:</strong> Protokol XRCE-DDS terbukti sangat handal</li>
+    <li>✅ <strong>Scalability:</strong> Arsitektur ROS 2 mudah dikembangkan untuk robot otonom</li>
+  </ul>
+</section>
 
 <section id="dokumentasi">
-    <h2>Dokumentasi Sistem</h2>
+    <h2>📸 Dokumentasi Visual</h2>
 
-    <h3>Foto Perangkat Keras</h3>
+    <h3>🖼️ Foto Perangkat Keras</h3>
     <figure class="doc-image">
         <img src="WhatsApp Image 2025-12-07 at 18.34.56.jpeg"
              alt="Rangkaian Smart Nurse Call berbasis ESP32">

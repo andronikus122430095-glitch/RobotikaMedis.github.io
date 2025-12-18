@@ -1,0 +1,52 @@
+<svg width="1200" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Gradient -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Pattern for tech feel -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="300" fill="url(#grad1)"/>
+  <rect width="1200" height="300" fill="url(#grid)"/>
+  
+  <!-- Title Section -->
+  <text x="600" y="100" font-family="Arial, sans-serif" font-size="56" font-weight="bold" fill="white" text-anchor="middle">
+    🏥 SMART NURSE CALL SYSTEM
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="150" font-family="Arial, sans-serif" font-size="28" fill="rgba(255,255,255,0.9)" text-anchor="middle">
+    Revolutionizing Healthcare Communication
+  </text>
+  
+  <!-- Tech Stack Badges -->
+  <g transform="translate(300, 200)">
+    <!-- ESP32 Badge -->
+    <rect x="0" y="0" width="120" height="40" rx="20" fill="rgba(255,255,255,0.2)"/>
+    <text x="60" y="27" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">ESP32</text>
+    
+    <!-- ROS2 Badge -->
+    <rect x="140" y="0" width="120" height="40" rx="20" fill="rgba(255,255,255,0.2)"/>
+    <text x="200" y="27" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">ROS 2</text>
+    
+    <!-- IoT Badge -->
+    <rect x="280" y="0" width="120" height="40" rx="20" fill="rgba(255,255,255,0.2)"/>
+    <text x="340" y="27" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">IoT</text>
+    
+    <!-- Micro-ROS Badge -->
+    <rect x="420" y="0" width="150" height="40" rx="20" fill="rgba(255,255,255,0.2)"/>
+    <text x="495" y="27" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">Micro-ROS</text>
+  </g>
+  
+  <!-- Decorative elements -->
+  <circle cx="100" cy="80" r="30" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="1100" cy="220" r="40" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="1050" cy="100" r="25" fill="rgba(255,255,255,0.1)"/>
+</svg>
