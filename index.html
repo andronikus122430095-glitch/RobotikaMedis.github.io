@@ -20,18 +20,45 @@
 
 <nav>
     <a href="#pendahuluan">Pendahuluan</a>
+    <a href="#latar-belakang">Latar Belakang</a>
     <a href="#deskripsi">Deskripsi</a>
-    <a href="#tujuan">Tujuan</a>
+    <a href="#tujuan">Tujuan dan Manfaat</a>
+    <a href="#arsitektur">Arsitektur Sistem</a>
+    <a href="#hardware">Perangkat Keras</a>
+    <a href="#software">Perangkat Lunak</a>
+    <a href="#kesimpulan">Kesimpulan</a>
     <a href="#dokumentasi">Dokumentasi</a>
 </nav>
 
 <section id="pendahuluan">
     <h2>Pendahuluan</h2>
-    <p>
-        Dalam ekosistem rumah sakit modern (Smart Hospital), efisiensi dan kecepatan respons tenaga medis merupakan faktor vital dalam keselamatan pasien. Sistem pemanggilan perawat (Nurse Call System) konvensional umumnya masih berbasis analog (kabel) yang kaku, sulit dikembangkan, dan tidak terintegrasi dengan sistem data digital. 
-        Seiring dengan perkembangan teknologi Robotika Medis, diperlukan sistem yang lebih cerdas, fleksibel, dan berbasis data. Oleh karena itu, proyek ini mengembangkan prototipe sistem Nurse Call nirkabel yang memanfaatkan Robot Operating System 2 (ROS 2). Penggunaan ROS 2 memungkinkan sistem ini dikembangkan lebih lanjut menjadi robot asisten otonom di masa depan. 
-        Proyek ini berjudul "Smart Nurse Call System berbasis Micro-ROS". Sistem ini adalah implementasi sistem cerdas berbasis ROS 2 yang menghubungkan perangkat keras mikrokontroler (ESP32) dengan komputer pusat (Nurse Station) melalui jaringan WiFi. 
-    </p>
+  <p>
+    Robotika medis merupakan cabang multidisipliner yang mengintegrasikan
+    teknik robotika, elektronika, kecerdasan buatan, dan ilmu kesehatan
+    untuk meningkatkan kualitas layanan medis. Penerapan robotika medis
+    mencakup sistem monitoring pasien, perangkat rehabilitasi, sistem
+    asistif perawat, hingga otomasi prosedur medis.
+  </p>
+  <p>
+    Perkembangan Internet of Things (IoT), sistem tertanam (embedded system),
+    dan middleware robotik seperti ROS dan micro-ROS memungkinkan integrasi
+    perangkat medis yang lebih cerdas, responsif, dan terhubung secara real-time.
+  </p>
+</section>
+
+<section id="latar-belakang">
+  <h2>Latar Belakang</h2>
+  <p>
+    Dalam lingkungan rumah sakit, komunikasi antara pasien dan tenaga medis
+    merupakan aspek krusial. Sistem pemanggil perawat konvensional memiliki
+    keterbatasan, seperti minimnya informasi kondisi pasien dan kurangnya
+    integrasi dengan sistem digital.
+  </p>
+  <p>
+    Oleh karena itu, proyek <strong>Smart Nurse Call System</strong> dikembangkan
+    sebagai solusi berbasis robotika medis dan IoT untuk meningkatkan respons
+    tenaga medis, efisiensi pelayanan, serta keselamatan pasien.
+  </p>
 </section>
 
 <section id="deskripsi">
@@ -45,13 +72,63 @@
 </section>
 
 <section id="tujuan">
-    <h2>Tujuan Pengembangan</h2>
-    <ul>
-        <li>Mengimplementasikan Micro-ROS</li>
-        <li>Menerapkan sistem kendali tertutup</li>
-        <li>Mendukung pengembangan Robotika Medis</li>
-    </ul>
+  <h2>Tujuan dan Manfaat</h2>
+  <ul>
+    <li>Mengembangkan sistem pemanggil perawat berbasis IoT dan embedded system</li>
+    <li>Mengintegrasikan mikrokontroler dengan antarmuka pengguna</li>
+    <li>Meningkatkan kecepatan dan akurasi respons tenaga medis</li>
+    <li>Menerapkan konsep robotika medis dalam sistem pelayanan kesehatan</li>
+    <li>Menjadi media pembelajaran implementatif pada mata kuliah Robotika Medis</li>
+  </ul>
 </section>
+
+<section id="arsitektur">
+  <h2>Arsitektur Sistem</h2>
+  <p>
+    Sistem Smart Nurse Call terdiri dari beberapa komponen utama, yaitu
+    mikrokontroler ESP32, tombol input pasien, buzzer dan LED indikator,
+    serta tampilan LCD. Data dari pasien diproses oleh ESP32 dan dikirimkan
+    melalui jaringan IoT untuk ditampilkan pada sistem monitoring.
+  </p>
+  <p>
+    Middleware robotik seperti ROS 2 dan micro-ROS memungkinkan sistem ini
+    dikembangkan lebih lanjut menjadi bagian dari ekosistem robotika medis
+    yang terdistribusi.
+  </p>
+</section>
+
+<section id="hardware">
+  <h2>Perangkat Keras</h2>
+  <ul>
+    <li>ESP32 sebagai pengendali utama sistem</li>
+    <li>Push button sebagai input panggilan pasien</li>
+    <li>LCD untuk menampilkan status sistem</li>
+    <li>Buzzer dan LED sebagai indikator visual dan audio</li>
+    <li>Breadboard dan kabel jumper untuk perakitan rangkaian</li>
+  </ul>
+</section>
+
+<section id="software">
+  <h2>Perangkat Lunak dan Teknologi</h2>
+  <ul>
+    <li>Arduino IDE untuk pemrograman ESP32</li>
+    <li>JavaScript, HTML, dan CSS untuk antarmuka web</li>
+    <li>GitHub Pages sebagai media publikasi website</li>
+    <li>Konsep IoT untuk komunikasi data</li>
+    <li>ROS 2 dan micro-ROS sebagai pengembangan lanjutan</li>
+  </ul>
+</section>
+
+<section id="kesimpulan">
+  <h2>Kesimpulan</h2>
+  <p>
+    Proyek Smart Nurse Call System menunjukkan bahwa penerapan robotika medis
+    berbasis IoT mampu meningkatkan efisiensi dan kualitas pelayanan kesehatan.
+    Sistem ini dapat dikembangkan lebih lanjut dengan integrasi sensor biometrik,
+    kecerdasan buatan, dan sistem rumah sakit terpusat.
+  </p>
+</section>
+
 
 <section id="dokumentasi">
     <h2>Dokumentasi Sistem</h2>
