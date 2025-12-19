@@ -316,3 +316,150 @@ Meskipun terdapat kendala-kendala di atas, sistem akhirnya berhasil berjalan sta
 ## 🎥 Video Demonstrasi Sistem
 [▶️ Klik untuk melihat video demonstrasi](https://andronikus122430095-glitch.github.io/RobotikaMedis.github.io/WhatsApp%20Video%202025-12-07%20at%2018.32.37.mp4)
 
+# 🧠 Arsitektur Sistem - Diagram Blok
+
+## Alur Kerja Sistem
+
+```mermaid
+flowchart TD
+    A[📋 Input Pasien<br/>Tombol Darurat Fisik] --> B[⚙️ Processing ESP32<br/>Baca Status GPIO]
+    B --> C[📤 Publish ke Topic<br/>/button_state]
+    C --> D[🌐 Network Transport<br/>WiFi - Protokol XRCE-DDS]
+    D --> E[🤖 ROS 2 Agent<br/>Micro-ROS Agent]
+    E --> F[🐍 Logic Processing<br/>Python Node: nurse_bot.py]
+    F --> G[📥 Proses Logika<br/>& Publish ke /led_command]
+    G --> H[🌐 Network Transport<br/>WiFi - Protokol XRCE-DDS]
+    H --> I[📡 ESP32 Subscribe<br/>Topic: /led_command]
+    I --> J[💡 Actuator Response<br/>Aktivasi LED + Buzzer]
+    
+    style A fill:#e1f5ff
+    style B fill:#fff4e1
+    style C fill:#fff4e1
+    style D fill:#e8f5e9
+    style E fill:#f3e5f5
+    style F fill:#fff3e0
+    style G fill:#fff3e0
+    style H fill:#e8f5e9
+    style I fill:#fff4e1
+    style J fill:#ffebee
+```
+
+## Komponen Sistem
+
+### 1️⃣ **Input Pasien**
+- Pasien menekan tombol darurat fisik
+- Trigger awal sistem
+
+### 2️⃣ **Processing ESP32**
+- ESP32 membaca status GPIO
+- Publikasi data ke topic `/button_state`
+
+### 3️⃣ **Network Transport**
+- Data dikirim via WiFi
+- Menggunakan protokol XRCE-DDS
+
+### 4️⃣ **ROS 2 Agent**
+- Micro-ROS Agent menerima data
+- Meneruskan data ke ROS 2 ecosystem
+
+### 5️⃣ **Logic Processing**
+- Python node (`nurse_bot.py`) memproses logika
+- Mem-publish perintah ke `/led_command`
+
+### 6️⃣ **Actuator Response**
+- ESP32 subscribe ke topic `/led_command`
+- Mengaktifkan LED + Buzzer
+
+---
+
+## Diagram Arsitektur Alternatif
+
+```mermaid
+graph LR
+    subgraph Hardware[Hardware Layer]
+        A[Tombol Darurat]
+        E[LED + Buzzer]
+    end
+    
+    subgraph Embedded[Embedded Layer]
+        B[ESP32<br/>GPIO Reader]
+        D[ESP32<br/>Actuator Control]
+    end
+    
+    subgraph Network[Network Layer]
+        C[WiFi<br/>XRCE-DDS]
+    end
+    
+    subgraph Software[Software Layer]
+        F[Micro-ROS<br/>Agent]
+        G[ROS 2<br/>Ecosystem]
+        H[nurse_bot.py<br/>Logic]
+    end
+    
+    A -->|Press| B
+    B -->|/button_state| C
+    C --> F
+    F --> G
+    G --> H
+    H -->|/led_command| G
+    G --> F
+    F --> C
+    C --> D
+    D -->|Activate| E
+    
+    style Hardware fill:#ffebee
+    style Embedded fill:#fff4e1
+    style Network fill:#e8f5e9
+    style Software fill:#e3f2fd
+```
+
+---
+
+## Flow Diagram Sederhana
+
+```mermaid
+sequenceDiagram
+    participant P as 👤 Pasien
+    participant E1 as ESP32 (Input)
+    participant N as 🌐 Network (XRCE-DDS)
+    participant R as 🤖 ROS 2 Agent
+    participant L as 🐍 nurse_bot.py
+    participant E2 as ESP32 (Output)
+    participant A as 💡 LED + Buzzer
+    
+    P->>E1: Tekan Tombol Darurat
+    E1->>E1: Baca Status GPIO
+    E1->>N: Publish /button_state
+    N->>R: Forward Data
+    R->>L: Kirim Status
+    L->>L: Proses Logika
+    L->>R: Publish /led_command
+    R->>N: Forward Command
+    N->>E2: Subscribe /led_command
+    E2->>A: Aktivasi LED + Buzzer
+    A-->>P: Alert Visual & Audio
+```
+
+---
+
+## Teknologi yang Digunakan
+
+| Komponen | Teknologi |
+|----------|-----------|
+| **Hardware** | ESP32, LED, Buzzer, Push Button |
+| **Protokol** | XRCE-DDS (eXtremely Resource Constrained Environments - DDS) |
+| **Framework** | ROS 2, Micro-ROS |
+| **Network** | WiFi |
+| **Programming** | Python (nurse_bot.py), C++ (ESP32) |
+| **Messaging** | DDS Topics (`/button_state`, `/led_command`) |
+
+---
+
+## Keunggulan Sistem
+
+✅ **Real-time Communication** - Menggunakan DDS untuk komunikasi real-time  
+✅ **Scalable** - Mudah menambah sensor/aktuator baru  
+✅ **Distributed** - Komponen dapat berada di lokasi berbeda  
+✅ **Reliable** - ROS 2 menyediakan QoS (Quality of Service)  
+✅ **Flexible** - Logic processing dapat dimodifikasi tanpa mengubah hardware  
+
